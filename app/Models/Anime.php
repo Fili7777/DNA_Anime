@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Anime extends Model
 {
-    //relazione 1 a N con favouritable
+    //relazione 1 a N con favourable
     public function favourites()
     {
-        return $this->morphMany(Favourite::class,'favouriteable');
+        return $this->morphMany(Favourite::class,'favourable');
     }
 }

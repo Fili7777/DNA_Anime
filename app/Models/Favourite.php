@@ -13,7 +13,7 @@ class Favourite extends Model
         return $this->belongsTo(User::class);
     }
 
-    //relazione N a 1 verso animeo manga ( grazie a morphs )
+    //relazione N a 1 verso anime o manga ( grazie a morphs )
     public function favourable(): \Illuminate\Database\Eloquent\Relations\MorphTo
     {
         return $this->morphTo();
