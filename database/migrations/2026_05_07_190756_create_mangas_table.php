@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer("volumes")->nullable();
             $table->string("status")->nullable();
             $table->timestamps();
-            $table->timestamps();
+
         });
     }
 

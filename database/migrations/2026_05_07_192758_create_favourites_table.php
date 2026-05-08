@@ -16,11 +16,11 @@ return new class extends Migration
 
             $table->unsignedBigInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users");
-            $table->morphs('favourite');
-            // crea favourite_id e favourite_type
+            $table->morphs('favourable');
+            // crea favourable_id e favourable_type
             //in questo modo non creiamo 2 tabelle (1 per anime e 1 per manga)
 
-            $table->unique(["user_id","favourite_id","favourite_type"]);
+            $table->unique(["user_id","favourable_id","favourable_type"]);
             //ogni campo deve essere unique con queste 3 cose.
 
             $table->timestamps();
