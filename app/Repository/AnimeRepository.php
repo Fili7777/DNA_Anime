@@ -19,7 +19,7 @@ class AnimeRepository implements AnimeInterface
 
     public function getList(): \Illuminate\Database\Eloquent\Collection
     {
-        return Anime::all();
+        return Anime::with('episodes')->get();
     }
 
     public function updateOrCreate(array $condizione, array $data): Anime

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('mal_id')->unique();
             $table->string('title')->nullable();
-            $table->unsignedInteger('anime_id')->nullable();
+            $table->unsignedBigInteger('anime_id')->nullable();
             $table->foreign('anime_id')->references('id')->on('animes');
             $table->timestamps();
         });
