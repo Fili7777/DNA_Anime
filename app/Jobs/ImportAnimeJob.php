@@ -10,6 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
+use Log;
 
 class ImportAnimeJob implements ShouldQueue
 {
@@ -35,7 +36,7 @@ class ImportAnimeJob implements ShouldQueue
                 //ricorsione sul job aumentando la pagina di 1 che andrà nel cosutruttore
             }
         } else {
-            \Log::error("Errore scaricamento Anime a pagina {$this->page}");
+            Log::error("Errore scaricamento Anime a pagina {$this->page}");
         }
     }
 }

@@ -16,7 +16,7 @@ class FavouriteManagement
     protected MangaRepository $mangaRepository;
 
 
-    public function __construct(AnimeRepository $animeRepository, MangaRepository $mangaRepository, UserRepository $userRepository, FavouriteRepository $favouriteRepository,)
+    public function __construct(AnimeRepository $animeRepository, MangaRepository $mangaRepository, UserRepository $userRepository, FavouriteRepository $favouriteRepository)
     {
         $this->animeRepository = $animeRepository;
         $this->mangaRepository = $mangaRepository;
@@ -45,7 +45,7 @@ class FavouriteManagement
             throw new \Exception("Unsupported media type");
         }
 
-        if($media){
+        if($media !== null){
             $this->favouriteRepository->addUserFavourite($user, $media);
         }
 
