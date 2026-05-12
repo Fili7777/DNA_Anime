@@ -14,7 +14,7 @@ class AnimeRepository implements AnimeInterface
 
     public function getById(int $id)
     {
-        return Anime::find($id);
+        return Anime::with('episodes')->find($id);
     }
 
     public function getList(): \Illuminate\Database\Eloquent\Collection

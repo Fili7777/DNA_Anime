@@ -9,6 +9,7 @@ class Episode extends Model
 {
     /** @use HasFactory<\Database\Factories\EpisodeFactory> */
     use HasFactory;
+    protected $fillable = ['mal_id','title','anime_id'];
     public function anime()
     {
         return $this->belongsTo(Anime::class);

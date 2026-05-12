@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('episodes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('mal_id')->unique();
+            $table->unsignedBigInteger('mal_id');
             $table->string('title')->nullable();
             $table->unsignedBigInteger('anime_id')->nullable();
             $table->foreign('anime_id')->references('id')->on('animes');
+
+            $table->unique(['anime_id', 'mal_id']);
             $table->timestamps();
         });
     }

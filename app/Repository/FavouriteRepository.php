@@ -13,10 +13,10 @@ class FavouriteRepository implements FavouriteInterface
     public function addUserFavourite(User $user, Model $favourite): Model
     {
         //controlla se già esiste sennò lo crea
-        return $user->favourites()->firstOrCreate([
-            'favourable_id' => $favourite->id,
-            'favourable_type' => get_class($favourite)
-        ]);
+        return Favourite::firstOrCreate([
+            'user_id' => $user->id,
+            'favourable_id'=>$favourite->id ,
+            'favourable_type'=>get_class($favourite)]);
     }
 
     public function deleteUserFavourite(User $user, Model $favourite)

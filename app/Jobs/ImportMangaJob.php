@@ -32,7 +32,7 @@ class ImportMangaJob implements ShouldQueue
             }
 
             if ($data['pagination']['has_next_page']) {
-                ImportMangaJob::dispatch($this->page + 1)->delay(now()->addMilliseconds(350));
+                ImportMangaJob::dispatch($this->page + 1)->delay(now()->addMilliseconds(1000));
                 //ricorsione sul job aumentando la pagina di 1 che andrà nel cosutruttore
             }
         } else {
