@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>Catalogo Anime</h1>
+    <h2>Ciao scegli pure un anime da mettere nei preferiti!</h2>
     <table>
         <tr>
             <th>TITOLO</th>

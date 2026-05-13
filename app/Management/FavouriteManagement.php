@@ -26,9 +26,9 @@ class FavouriteManagement
     }
 
     //funzione che prende preferiti di un utente
-    public function getUserFavourites($userId): \Illuminate\Database\Eloquent\Collection
+    public function getUserFavourites(User $user): \Illuminate\Database\Eloquent\Collection
     {
-        return $this->favouriteRepository->getUserFavourites($userId);
+        return $this->favouriteRepository->getUserFavourites($user);
     }
 
     //Funzione che aggiunge un media ( anime o manga ) ai favourites

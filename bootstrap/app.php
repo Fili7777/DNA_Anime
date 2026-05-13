@@ -11,7 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->redirectTo(
+            guests: '/login', // Dove mandare chi NON è loggato se cerca di entrare
+            users: '/'        // Dove mandare CHI È LOGGATO se cerca di andare sul form login/register
+        );
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

@@ -7,4 +7,5 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-Schedule::command('importJikanData')->dailyAt('10:00');
+Schedule::command('importJikanAnime')->daily();
+Schedule::command('importJikanManga')->dailyAt('10:00');

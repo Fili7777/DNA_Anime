@@ -13,9 +13,9 @@ use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 
-#[Signature('importJikanData')]
+#[Signature('importJikanAnime')]
 #[Description('Importa Anime e Manga da API jikan')]
-class ImportJikanData extends Command
+class ImportJikanAnime extends Command
 {
     /**
      * Execute the console command.
@@ -23,7 +23,7 @@ class ImportJikanData extends Command
     public function handle()
     {
         ImportAnimeJob::dispatch();
-        ImportMangaJob::dispatch();
+
         echo "\nIMPORTAZIONE AVVIATA DA jikan\n";
     }
 }
