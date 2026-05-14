@@ -12,6 +12,21 @@
 
         <p>Tipo: {{ $tipo }}  </p>
 
+
+        @if($tipo == 'Anime')
+            <p>Episodi: {{ $favourite->favourable->episodes}}</p>
+
+        @else
+            <p>Volumi {{ $favourite->favourable->volumes}}</p>
+        @endif
+
+        <!-- Pulsante per rimuovere dai preferiti -->
+        <form action="{{ route('delete_favourite', $favourite ) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Rimuovi dai Preferiti</button>
+        </form>
+
     <p>------------------</p>
     </div>
 @empty

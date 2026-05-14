@@ -6,6 +6,7 @@ use App\Api\MangaInterface;
 use App\Models\Manga;
 use Illuminate\Support\Collection;
 
+
 class MangaRepository implements MangaInterface
 {
 
@@ -28,4 +29,6 @@ class MangaRepository implements MangaInterface
     {
         return Manga::updateOrCreate($condizione, $data);
     }
+
+
 }

@@ -21,6 +21,24 @@
             <td><img src="{{ $anime->image_url }}" alt="{{ $anime->title }}"></td>
             <td>{{ $anime->episodes }}</td>
             <td>{{ $anime->status }}</td>
+            <td>
+                <!-- SE L'UTENTE E' LOGGATO: -->
+                @auth
+                    <form action="{{ route('add_anime', $anime) }}" method="POST">
+                        @csrf
+                        <button type="submit">Aggiungi ai Preferiti</button>
+                    </form>
+                @endauth
+
+                <!-- SE L'UTENTE E' UN OSPITE -->
+                @guest
+                    <div>
+                        <p>Vuoi salvare questo anime?</p>
+                        <a href="{{ route('login') }}">Accedi</a> o
+                        <a href="{{ route('register') }}">Registrati</a>
+                    </div>
+                @endguest
+            </td>
         </tr>
         @endforeach
     </table>

@@ -19,12 +19,10 @@ class FavouriteRepository implements FavouriteInterface
             'favourable_type'=>get_class($favourite)]);
     }
 
-    public function deleteUserFavourite(User $user, Model $favourite)
-    {
-        return $user->favourites()->where([
-            'favourable_id' => $favourite->id, 'favourable_type' => get_class($favourite)
-        ])->delete();
+    public function deleteUserFavourite(User $user, Favourite $favourite) {
+        return $user->favourites()->where('id',$favourite->id)->delete();
     }
+
 
     public function getUserFavourites(User $user): \Illuminate\Database\Eloquent\Collection
     {

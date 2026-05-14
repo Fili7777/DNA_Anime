@@ -11,7 +11,7 @@
         </form>
     </li>
 
-
+    <li><a href="{{ route('favourite') }}"> Mostra Preferiti </a> </li>
     <li><a href="{{ route('anime') }}"> Mostra Lista Anime </a> </li>
     <li><a href="{{ route('manga') }}"> Mostra Lista manga </a> </li>
 </ul>

@@ -13,4 +13,4 @@
 
     <button type="submit">Registrati</button>
 </form>
-
+<a href="{{ route('loginForm')}}"> <h3>Accedi ora! </h3></a>

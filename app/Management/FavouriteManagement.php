@@ -31,23 +31,4 @@ class FavouriteManagement
         return $this->favouriteRepository->getUserFavourites($user);
     }
 
-    //Funzione che aggiunge un media ( anime o manga ) ai favourites
-    public function addMediaToFavourites(User $user, $mediaId, $mediaType)
-    {
-
-        $media = null;
-
-        if($mediaType == 'manga'){
-            $media = $this->mangaRepository->getById($mediaId);
-        }elseif($mediaType == 'anime'){
-            $media = $this->animeRepository->getById($mediaId);
-        }else{
-            throw new \Exception("Unsupported media type");
-        }
-
-        if($media !== null){
-            $this->favouriteRepository->addUserFavourite($user, $media);
-        }
-
-    }
 }

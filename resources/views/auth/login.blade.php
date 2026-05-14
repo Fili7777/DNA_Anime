@@ -11,5 +11,5 @@
     <button type="submit">ACCEDI</button>
 
 </form>
-<a href="{{ route('register')}}"> <h3>Registrati ora! </h3></a>
+<a href="{{ route('registerForm')}}"> <h3>Registrati ora! </h3></a>
 

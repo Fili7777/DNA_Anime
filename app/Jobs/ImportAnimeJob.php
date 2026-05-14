@@ -15,8 +15,7 @@ class ImportAnimeJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public $tries = 5;
-    public $backoff = 10;
+
 
     public function __construct(public int $page = 1) {}
 
@@ -30,7 +29,7 @@ class ImportAnimeJob implements ShouldQueue
 
         $delay = 2; // Partiamo con 2 secondo di ritardo
 
-        // Estrazione dati
+        // Estrazione dati sicura tramnite metodo ->json che nel caso data non ce restituisce array vuoto
         foreach ($response->json('data', []) as $anime) {
             $animeCreato = $animeRepository->updateOrCreate(
                 ['mal_id' => $anime['mal_id']], //condizione
