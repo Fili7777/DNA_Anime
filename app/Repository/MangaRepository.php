@@ -20,9 +20,9 @@ class MangaRepository implements MangaInterface
         return Manga::find($id);
     }
 
-    public function getList(): \Illuminate\Database\Eloquent\Collection
+    public function getList()
     {
-        return Manga::all();
+        return Manga::simplePaginate(20);
     }
 
     public function updateOrCreate(array $condizione, array $data)

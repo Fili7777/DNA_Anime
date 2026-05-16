@@ -42,5 +42,9 @@
         </tr>
         @endforeach
     </table>
+
+<div>
+    {{ $animeList->links() }}
+</div>
 </body>
 </html>

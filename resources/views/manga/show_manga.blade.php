@@ -42,5 +42,11 @@
         </td>
     @endforeach
 </table>
+
+
+<div >
+    {{ $mangaList->links() }}
+</div>
+
 </body>
 </html>

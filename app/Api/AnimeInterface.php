@@ -9,6 +9,6 @@ interface AnimeInterface
 {
     public function delete(Anime $anime);
     public function getById(int $id);
-    public function getList(): Collection;
+    public function getList();
     public function updateOrCreate(array $condizione, array $data): Anime;
 }

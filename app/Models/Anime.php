@@ -13,7 +13,7 @@ class Anime extends Model
     {
         return $this->morphMany(Favourite::class,'favourable');
     }
-    public function episodes()
+    public function listEpisodes()
     {
         return $this->hasMany(Episode::class);
     }

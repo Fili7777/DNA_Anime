@@ -36,7 +36,7 @@ class ImportAnimeJob implements ShouldQueue
                 AnimeHydrator::hydrate($anime)
             );
 
-            //
+
             ImportEpisodeJob::dispatch($animeCreato->getKey(), $anime['mal_id'])->delay($delay);
             $delay += 2;
         }

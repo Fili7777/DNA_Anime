@@ -14,12 +14,12 @@ class AnimeRepository implements AnimeInterface
 
     public function getById(int $id)
     {
-        return Anime::with('episodes')->find($id);
+        return Anime::with('listEpisodes')->find($id);
     }
 
-    public function getList(): \Illuminate\Database\Eloquent\Collection
+    public function getList()
     {
-        return Anime::with('episodes')->get();
+        return Anime::with('listEpisodes')->simplePaginate(20);
     }
 
     public function updateOrCreate(array $condizione, array $data): Anime
